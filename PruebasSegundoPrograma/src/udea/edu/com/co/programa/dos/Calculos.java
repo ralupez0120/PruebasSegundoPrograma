@@ -116,4 +116,18 @@ public class Calculos {
         }
         return Y;
     }
+    
+    public static double calcularYk(double beta0, double beta1, double xk){
+        return (beta0 + (beta1*xk));
+    }
+    
+    public static double roundDouble(double value, int places) {
+    if (places < 0) throw new IllegalArgumentException();
+
+    long factor = (long) Math.pow(10, places);
+    value = value * factor;
+    long tmp = Math.round(value);
+    return (double) tmp / factor;
+}
+    
 }

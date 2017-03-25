@@ -114,4 +114,39 @@ public class ListaLigada {
     public double getCantidadNodos(){
         return cabeza.getDato();
     }
+
+    int getTamano() {
+        Nodo aux = this.getCabeza();
+        if (aux != null) {
+            int cont = 0;
+            for (; aux != null; cont++) {
+                aux = aux.getSiguiente();
+            }
+            return cont-1;
+        } else {
+            return 0;
+        }
+    }
+
+    Nodo getNodo(int i) {
+        if(cabeza.getDato()==0)
+            return null;
+        if(i == 0)
+            return primero;
+        else{
+            Nodo p;
+            p = primero.getSiguiente();
+            int j = 1;
+            while(p != null){
+                if (i == j) {
+                    return p;
+                } else {
+                    p = p.getSiguiente();
+                    j++;
+                }
+            }
+        }
+        return null;
+    }
+
 }
